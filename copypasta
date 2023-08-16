@@ -1,0 +1,119 @@
+window = tk.Tk()
+greeting = tk.Label(text="Hello, Tkinter")
+
+label = tk.Label(
+    text="Hello, tkinter",
+    fg="white",
+    bg="black",
+    width=10,
+    height=5)
+
+
+
+mystring = tk.StringVar(window)
+
+def get_value():
+    print (mystring.get())
+
+button = tk.Button(text="Click me!", width=25, height=5, bg="blue", fg="yellow", command=get_value)
+
+entry = tk.Entry(window, textvariable = mystring, fg="yellow", bg="#0000ff", width=50)
+
+greeting.pack()
+label.pack()
+button.pack()
+entry.pack()
+window.mainloop()
+
+
+#################################################
+
+window = tk.Tk()
+window.geometry("500x200")
+
+frame_a = tk.Frame()
+frame_b = tk.Frame()
+
+label_a = tk.Label(master=frame_a, text="I'm in Frame A")
+label_a.pack()
+
+label_b = tk.Label(master=frame_b, text="I'm in Frame B")
+label_b.pack()
+
+frame_a.pack()
+frame_b.pack()
+
+window.mainloop()
+
+
+#########################################################
+
+frame1 = tk.Frame(master=window, width=200, height=100, bg="red")
+frame1.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
+
+frame2 = tk.Frame(master=window, width=100, bg="yellow")
+frame2.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
+
+frame3 = tk.Frame(master=window, width=50, bg="blue")
+frame3.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
+
+window.mainloop()
+
+###########################################################################
+username="user"
+password="password"
+
+root = tk.Tk()
+root.geometry("240x100")
+root.title("login")
+root.resizable(1,1)
+
+root.columnconfigure(0, weight=1)
+root.columnconfigure(1, weight=3)
+
+username_label = ttk.Label(root, text="Username:")
+username_label.grid(column=0, row=0, sticky=tk.W, padx=5, pady=5)
+
+username_entry = ttk.Entry(root, textvariable=username)
+username_entry.grid(column=1, row=0, sticky=tk.E, padx=5, pady=5)
+
+password_label = ttk.Label(root,  text="Password:")
+password_label.grid(column=0, row=1, sticky=tk.W, padx=5, pady=5)
+
+password_entry = ttk.Entry(root, textvariable=password, show="*")
+password_entry.grid(column=1, row=1, sticky=tk.E, padx=5, pady=5)
+
+login_button = ttk.Button(root, text="Login")
+login_button.grid(column=1, row=3, sticky=tk.E, padx=5, pady=5)
+
+
+############################################
+numpad_btn_0 = ttk.Button(root, text="0")
+numpad_btn_0.grid(column=1, row=3)
+
+numpad_btn_1 = ttk.Button(root, text="1")
+numpad_btn_1.grid(column=0, row=2)
+
+numpad_btn_2 = ttk.Button(root, text="2")
+numpad_btn_2.grid(column=1, row=2)
+
+numpad_btn_3 = ttk.Button(root, text="3")
+numpad_btn_3.grid(column=2, row=2)
+
+numpad_btn_4 = ttk.Button(root, text="4")
+numpad_btn_4.grid(column=0, row=1)
+
+numpad_btn_5 = ttk.Button(root, text="5")
+numpad_btn_5.grid(column=1, row=1)
+
+numpad_btn_6 = ttk.Button(root, text="6")
+numpad_btn_6.grid(column=2, row=1)
+
+numpad_btn_7 = ttk.Button(root, text="7")
+numpad_btn_7.grid(column=0, row=0)
+
+numpad_btn_8 = ttk.Button(root, text="8")
+numpad_btn_8.grid(column=1, row=0)
+
+numpad_btn_9 = ttk.Button(root, text="9")
+numpad_btn_9.grid(column=2, row=0)
